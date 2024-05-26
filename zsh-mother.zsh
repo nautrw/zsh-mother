@@ -7,25 +7,25 @@ POSITIVE_RESPONSES=(
     "youre such a smart cookie ❤"
     "mommy thinks her little pookie bear has earned a big hug ❤"
     "good boy! mommy is proud of you ❤"
-    "mommy knew you could do it\!"
+    "mommy knew you could do it! ❤"
     "*pets head*"
     "you make mommy so happy ❤"
     "mommy loves her little genius ❤"
     "*snuggles you close*"
     "you did such a great job, sweetie! ❤"
     "*kisses your forehead*"
-    "yay! you got it\!" 
+    "yay! you got it! ❤" 
 )
 
 NEGATIVE_RESPONSES=(
     "mommy believes in you! ❤"
     "do you need my help?"
-    "mommy will love you no matter what\!"
+    "mommy will love you no matter what! ❤"
     "i know my little pookie bear can do better! ❤"
     "just a litte further, sweetie! ❤"
     "lets try again ❤"
     "mommy is here to help you get through this ❤"
-    "mommy knows you can do it\!"
+    "mommy knows you can do it! ❤"
 )
 
 add-zsh-hook precmd mommy
