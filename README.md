@@ -1,9 +1,11 @@
 # zsh-mother
 <sup>Inspired from [catuhana/zsh-mommy](https://github.com/catuhana/zsh-mommy), but made "smarter"</sup>
 
-**⚠️ This is probably very broken and doesn't work correctly. I made this for fun and as a joke. ⚠️**
+>[!WARNING]
+>This is probably very broken and doesn't work correctly. I made this for fun and as a joke.
 
-As previously mentioned, this project was made based on [catuhana/zsh-mommy](https://github.com/catuhana/zsh-mommy). It was made to be "smarter," as in now it only sends a message every 3 commands. It's very useless and you're probably better off using the real thing.
+>[!IMPORTANT]
+>As previously mentioned, this project was made based on [catuhana/zsh-mommy](https://github.com/catuhana/zsh-mommy). It was made to be "smarter," as in now it only sends a message every 3 commands. It's very useless and you're probably better off using the real thing.
 
 ## Installation
 Despite the warnings above, here are instructions on how to install this.
