@@ -6,7 +6,7 @@ MOMMY_RESPONSE_TYPES=(POSITIVE NEGATIVE)
 POSITIVE_RESPONSES=(
     "youre such a smart cookie ❤"
     "mommy thinks her little pookie bear has earned a big hug ❤"
-    "good boy! mommy's proud of you ❤"
+    "good boy! mommy is proud of you ❤"
     "mommy knew you could do it!"
     "*pets head*"
     "you make mommy so happy ❤"
