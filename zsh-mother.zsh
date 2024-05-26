@@ -4,7 +4,7 @@ autoload -Uz add-zsh-hook
 
 MOMMY_RESPONSE_TYPES=(POSITIVE NEGATIVE)
 POSITIVE_RESPONSES=(
-    $'you\'re such a smart cookie ❤'
+    "youre such a smart cookie ❤"
     "mommy thinks her little pookie bear has earned a big hug ❤"
     "good boy! mommy's proud of you ❤"
     "mommy knew you could do it!"
@@ -23,28 +23,36 @@ NEGATIVE_RESPONSES=(
     "mommy will love you no matter what!"
     "i know my little pookie bear can do better! ❤"
     "just a litte further, sweetie! ❤"
-    "let's try again ❤"
+    "lets try again ❤"
     "mommy is here to help you get through this ❤"
     "mommy knows you can do it!"
 )
 
-RUN_MOMMY_AFTER_EVERY_COMMAND=true
-MOMMY_RESPONSE_COLOR=(255 158 171)
+add-zsh-hook precmd mommy
+add-zsh-hook precmd error_counter
 
-function mommy_response() {
-    local success=$?  # Get the exit status of the last command
-    local color=$'%{\e[38;2;'${MOMMY_RESPONSE_COLOR[1]}';'${MOMMY_RESPONSE_COLOR[2]}';'${MOMMY_RESPONSE_COLOR[3]}'m%}'
-    local reset_color=$'%{\e[0m%}'
-
-    if [[ $success -eq 0 ]]; then
-        response="${POSITIVE_RESPONSES[$((RANDOM % ${#POSITIVE_RESPONSES[@]}))]}"
+ERROR_COUNT=0
+function error_counter() {
+    if [ $? -ne 0 ]; then
+        ((ERROR_COUNT++))
     else
-        response="${NEGATIVE_RESPONSES[$((RANDOM % ${#NEGATIVE_RESPONSES[@]}))]}"
-    fi
-
-    if [[ $RUN_MOMMY_AFTER_EVERY_COMMAND == true ]]; then
-        print -P "${color}${response}${reset_color}"
+        ((ERROR_COUNT--))
     fi
 }
 
-add-zsh-hook precmd mommy_response
+function mommy() {
+    local command_status=${1:-$?}
+    local response_type_index=$((command_status == 0 ? 1 : 2))
+
+    local response
+
+    if [[ $ERROR_COUNT -ge 3 ]]; then
+        ERROR_COUNT=0
+        echo "\033[38;2;255;158;171m${NEGATIVE_RESPONSES[$((RANDOM % ${#NEGATIVE_RESPONSES[@]}))]}"
+    fi
+    
+    if [[ $ERROR_COUNT -eq -3 ]]; then
+        echo "\033[38;2;255;158;171m${POSITIVE_RESPONSES[$((RANDOM % ${#POSITIVE_RESPONSES[@]}))]}"
+        ERROR_COUNT=0
+    fi
+}
