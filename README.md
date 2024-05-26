@@ -44,4 +44,4 @@ plugins=(zsh-mommy)
 I honestly didn't care enough to include other package managers.
 
 ## Showcase
-<a href="https://asciinema.org/a/jBggItmNmnmO8GQ4gJAUE9ory" target="_blank"><img src="https://asciinema.org/a/37390.png" width="400" /></a>
+<a href="https://asciinema.org/a/jBggItmNmnmO8GQ4gJAUE9ory" target="_blank"><img src="https://asciinema.org/a/jBggItmNmnmO8GQ4gJAUE9ory.png" width="400" /></a>
